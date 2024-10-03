@@ -64,3 +64,7 @@ listen tcp :8091: bind: address already in use
 2024/10/03 13:40:25 daemon started
 server is running on port 8091
 listen tcp :8091: bind: address already in use
+2024/10/03 13:56:19 - - - - - - - - - - - - - - -
+2024/10/03 13:56:19 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
