@@ -1,0 +1,68 @@
+package template
+
+var onceHandle = templ.NewOnceHandle()
+
+templ Card(queries []string) {
+	<div class="flex flex-1 flex-row flex-wrap">
+		for _, query := range queries {
+			<form hx-delete="/delete" hx-include="[name='test']">
+				<div class="card">
+					<header class="card-header">
+						<p class="card-header-title">Query Name</p>
+						<button type="submit" class="btn-close" name="query" value={ query }></button>
+					</header>
+					<div class="card-content">
+						<div class="content">
+							<br/>
+							<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+						</div>
+					</div>
+					<footer class="card-footer">
+						<a href="#" class="card-footer-item">Save</a>
+						<a href="#" class="card-footer-item">Edit</a>
+						<a href="#" class="card-footer-item">Delete</a>
+					</footer>
+				</div>
+			</form>
+		}
+		<div class="modal" id="mymodal">
+			<div class="modal-background"></div>
+			<div class="modal-card">
+				<header class="modal-card-head">
+					<p class="modal-card-title">Modal title</p>
+					<button class="delete" aria-label="close" onclick="hideModal()"></button>
+				</header>
+				<section class="modal-card-body" id="modalbody">
+					<!-- Content ... -->
+				</section>
+				<footer class="modal-card-foot">
+					<div class="buttons">
+						<button class="button is-success">Save changes</button>
+						<button class="button" onclick="hideModal()">Cancel</button>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+	@onceHandle.Once() {
+		<script>
+  var format = window.sqlFormatter.format;
+  document.querySelectorAll("#sqlArea").forEach((query) => {
+    if (query.innerHTML.length > 250) {
+      query.innerHTML = query.innerHTML.slice(0, query.innerHTML.length / 32) + " ..."
+      console.log(query.innerHTML.slice(0, 10))
+    }
+  });
+  function toggleModal(event) {
+    console.log("event:", event)
+    var element = document.getElementById("mymodal");
+    element.classList.add("is-active");
+  }
+  function hideModal() {
+    var element = document.getElementById("mymodal");
+    element.classList.remove("is-active");
+  }
+
+</script>
+	}
+}

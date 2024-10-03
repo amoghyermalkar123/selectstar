@@ -1,0 +1,66 @@
+2024/10/03 12:24:23 - - - - - - - - - - - - - - -
+2024/10/03 12:24:23 daemon started
+server is running on port 8091
+LoadQueries err: unable to open database file: out of memory (14)
+2024/10/03 12:28:00 - - - - - - - - - - - - - - -
+2024/10/03 12:28:00 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 12:28:08 - - - - - - - - - - - - - - -
+2024/10/03 12:28:08 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 12:31:45 - - - - - - - - - - - - - - -
+2024/10/03 12:31:45 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 12:34:48 - - - - - - - - - - - - - - -
+2024/10/03 12:34:48 daemon started
+panic: attempt to write a readonly database (8)
+
+goroutine 1 [running]:
+xerus/internal/db.NewQueryStore(0xc0000a9790)
+	/home/amogh/select-star/internal/db/queryStore.go:16 +0xfd
+xerus/internal/handler.NewHandler(...)
+	/home/amogh/select-star/internal/handler/handler.go:23
+main.runServer()
+	/home/amogh/select-star/main.go:48 +0x85
+main.main()
+	/home/amogh/select-star/main.go:39 +0x26b
+2024/10/03 12:38:48 - - - - - - - - - - - - - - -
+2024/10/03 12:38:48 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 12:40:42 - - - - - - - - - - - - - - -
+2024/10/03 12:40:42 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 12:41:10 - - - - - - - - - - - - - - -
+2024/10/03 12:41:10 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 12:41:41 - - - - - - - - - - - - - - -
+2024/10/03 12:41:41 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 12:42:41 - - - - - - - - - - - - - - -
+2024/10/03 12:42:41 daemon started
+2024/10/03 12:42:41 unable to open database file: out of memory (14)
+2024/10/03 12:52:04 - - - - - - - - - - - - - - -
+2024/10/03 12:52:04 daemon started
+2024/10/03 12:52:04 unable to open database file: out of memory (14)
+2024/10/03 12:58:15 - - - - - - - - - - - - - - -
+2024/10/03 12:58:15 daemon started
+2024/10/03 12:58:15 ping errunable to open database file: out of memory (14)
+2024/10/03 13:00:32 - - - - - - - - - - - - - - -
+2024/10/03 13:00:32 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 13:01:15 - - - - - - - - - - - - - - -
+2024/10/03 13:01:15 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
+2024/10/03 13:40:25 - - - - - - - - - - - - - - -
+2024/10/03 13:40:25 daemon started
+server is running on port 8091
+listen tcp :8091: bind: address already in use
