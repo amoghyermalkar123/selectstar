@@ -8,7 +8,7 @@ import (
 )
 
 func DB() *sql.DB {
-	db, err := sql.Open("sqlite", "/opt/selectstar/queries.db")
+	db, err := sql.Open("sqlite", "queries.db")
 	if err != nil {
 		log.Fatal("open err", err)
 	}
