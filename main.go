@@ -15,7 +15,7 @@ const PORT = "8091"
 
 func main() {
 	cntxt := &daemon.Context{
-		PidFileName: "selectstar.pid",
+		PidFileName: "/opt/selectstar/selectstar.pid",
 		PidFilePerm: 0644,
 		LogFileName: "selectstar.log",
 		LogFilePerm: 0640,

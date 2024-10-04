@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"os/exec"
@@ -20,10 +19,6 @@ func main() {
 						Name:  "start",
 						Usage: "start the server",
 						Action: func(ctx *cli.Context) error {
-							bytesRead, _ := os.ReadFile("selectstar.pid")
-							if len(bytesRead) > 0 {
-								fmt.Println("server already running! check: localhost:8091")
-							}
 							cmd := exec.Command("/bin/bash", "-c", "selectstar-daemon")
 							_, err := cmd.Output()
 							if err != nil {
@@ -36,7 +31,7 @@ func main() {
 						Name:  "stop",
 						Usage: "stop the server",
 						Action: func(ctx *cli.Context) error {
-							cmd := exec.Command("/bin/bash", "-c", "kill `cat selectstar.pid`")
+							cmd := exec.Command("/bin/bash", "-c", "kill `cat /opt/selectstar/selectstar.pid`")
 							_, err := cmd.Output()
 							if err != nil {
 								return err

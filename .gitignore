@@ -2,3 +2,10 @@
 tmp
 node_modules
 bun.lockb
+cmd/*.log
+cmd/*.pid
+cmd/selectstar
+select-star-daemon
+*.log
+c*.pid
+
