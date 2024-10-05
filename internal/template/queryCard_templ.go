@@ -28,12 +28,12 @@ func Card(queries []string) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"flex flex-1 flex-row flex-wrap\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		for _, query := range queries {
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 2)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<form hx-delete=\"/delete\" hx-include=\"[name=&#39;test&#39;]\"><div class=\"card\"><header class=\"card-header\"><p class=\"card-header-title\">Query Name</p><button type=\"submit\" class=\"btn-close\" name=\"query\" value=\"")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -46,12 +46,12 @@ func Card(queries []string) templ.Component {
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 3)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\"></button></header><div class=\"card-content\"><div class=\"content\"><br><time datetime=\"2016-1-1\">11:09 PM - 1 Jan 2016</time></div></div><footer class=\"card-footer\"><a href=\"#\" class=\"card-footer-item\">Save</a> <a href=\"#\" class=\"card-footer-item\">Edit</a> <a href=\"#\" class=\"card-footer-item\">Delete</a></footer></div></form>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
 		}
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 4)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"modal\" id=\"mymodal\"><div class=\"modal-background\"></div><div class=\"modal-card\"><header class=\"modal-card-head\"><p class=\"modal-card-title\">Modal title</p><button class=\"delete\" aria-label=\"close\" onclick=\"hideModal()\"></button></header><section class=\"modal-card-body\" id=\"modalbody\"><!-- Content ... --></section><footer class=\"modal-card-foot\"><div class=\"buttons\"><button class=\"button is-success\">Save changes</button> <button class=\"button\" onclick=\"hideModal()\">Cancel</button></div></footer></div></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -67,7 +67,7 @@ func Card(queries []string) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 5)
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<script>\n  var format = window.sqlFormatter.format;\n  document.querySelectorAll(\"#sqlArea\").forEach((query) => {\n    if (query.innerHTML.length > 250) {\n      query.innerHTML = query.innerHTML.slice(0, query.innerHTML.length / 32) + \" ...\"\n      console.log(query.innerHTML.slice(0, 10))\n    }\n  });\n  function toggleModal(event) {\n    console.log(\"event:\", event)\n    var element = document.getElementById(\"mymodal\");\n    element.classList.add(\"is-active\");\n  }\n  function hideModal() {\n    var element = document.getElementById(\"mymodal\");\n    element.classList.remove(\"is-active\");\n  }\n\n</script>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

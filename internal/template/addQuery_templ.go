@@ -26,7 +26,7 @@ func Add() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templ.WriteWatchModeString(templ_7745c5c3_Buffer, 1)
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<h1 class=\"title is-2\">Add Query</h1><form hx-post=\"/query\" hx-target=\"#errorZone\" id=\"queryForm\"><div class=\"field\"><label class=\"label\">Name</label><div class=\"control\"><input class=\"input\" name=\"queryName\" type=\"text\" type=\"text\" placeholder=\"add the query name here\"></div></div><div class=\"field\"><label class=\"label\">Query</label><div class=\"control\"><textarea class=\"textarea\" name=\"query\" type=\"text\" placeholder=\"add your query here\" id=\"queryThing\" onchange=\"format(this)\"></textarea></div></div><div class=\"field is-grouped\"><div class=\"control\"><button class=\"button is-link\" type=\"submit\" value=\"Add Query\">Add Query</button></div></div></form><script>\n  function format(event) {\n    var format = window.sqlFormatter.format;\n    event.value = format(event.value)\n  }\n\n  document.addEventListener(\"htmx:afterRequest\", () => {\n    document.getElementById(\"queryForm\").reset();\n  })\n</script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
