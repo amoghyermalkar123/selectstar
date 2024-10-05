@@ -8,4 +8,5 @@ cmd/selectstar
 select-star-daemon
 *.log
 c*.pid
+queries.db
 
