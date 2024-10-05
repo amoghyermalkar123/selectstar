@@ -58,12 +58,12 @@ templ SearchResult(queryNames []string) {
 	}
 }
 
-templ FullQueryView(query string) {
+templ FullQueryView(name, query string) {
 	<div class="modal is-active" id="modalView">
 		<div class="modal-background"></div>
 		<div class="modal-card">
 			<header class="modal-card-head">
-				<p class="modal-card-title">Modal title</p>
+				<p class="modal-card-title"><span class="has-text-info">{ name }</span></p>
 				<button class="delete" aria-label="close" onclick="hideModal()"></button>
 			</header>
 			<pre class="modal-card-body" id="queryModal">

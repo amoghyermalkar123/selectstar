@@ -1,0 +1,2 @@
+<div class=\"notification \" id=\"errorToast\"><button class=\"delete\" onclick=\"hideErrorToast()\"></button> 
+</div><script>\n  function hideErrorToast() {\n    document.getElementById(\"errorToast\").remove()\n  }\n</script>

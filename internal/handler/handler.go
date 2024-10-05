@@ -89,10 +89,10 @@ func (h *Handler) SearchQuery(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) GetQuery(w http.ResponseWriter, r *http.Request) {
-	query, err := h.QueryStore.GetQuery(r.URL.Query()["queryName"][0])
+	name, query, err := h.QueryStore.GetQuery(r.URL.Query()["queryName"][0])
 	if err != nil {
 		template.ErrorToast(err.Error()).Render(r.Context(), w)
 		return
 	}
-	template.FullQueryView(query).Render(r.Context(), w)
+	template.FullQueryView(name, query).Render(r.Context(), w)
 }

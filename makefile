@@ -3,7 +3,7 @@ watch-assets:
 
 templ:
 	# templ generate --watch
-	@templ generate --watch --proxy="http://localhost:8080" --open-browser=false
+	@templ generate --watch --proxy="http://localhost:8091" --open-browser=false
 
 server:
 	air

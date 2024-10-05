@@ -48,13 +48,13 @@ func (q *QueryStore) GetQueries() []string {
 	return q.queryStore
 }
 
-func (q *QueryStore) GetQuery(name string) (string, error) {
-	var query string
-	res := q.db.QueryRow("select query from queries where name=?", name)
-	if err := res.Scan(&query); err != nil {
-		return "", err
+func (q *QueryStore) GetQuery(name string) (string, string, error) {
+	var queryname, query string
+	res := q.db.QueryRow("select name, query from queries where name=?", name)
+	if err := res.Scan(&queryname, &query); err != nil {
+		return "", "", err
 	}
-	return query, nil
+	return queryname, query, nil
 }
 
 func (q *QueryStore) LoadQueries() []string {

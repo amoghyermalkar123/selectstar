@@ -1,0 +1,6 @@
+<html><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css\"><link rel=\"stylesheet\" href=\"/static/css/output.css\"><script src=\"https://unpkg.com/htmx.org@1.9.11\"></script><script src=\"https://unpkg.com/sql-formatter@2.3.3/dist/sql-formatter.min.js\"></script><title>
+</title></head><body><main class=\"p-6 grid gap-4 container-fluid\" id=\"mainpage\">
+</main></body></html>
+<div>
+<div id=\"errorZone\"></div><div id=\"cardContainer\">
+</div></div>

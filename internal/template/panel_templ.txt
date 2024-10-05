@@ -1,0 +1,13 @@
+<article class=\"panel is-info\" id=\"panelData\"><p class=\"panel-heading\">Search Query</p><p class=\"panel-tabs\"></p><div class=\"panel-block\"><p class=\"control has-icons-left\">
+<input type=\"search\" name=\"search\" hx-get=\"/search\" hx-trigger=\"newDeletion from:body\" hx-target=\"#searchResultArea\" class=\"
+\"> 
+<input type=\"search\" name=\"search\" hx-get=\"/search\" hx-trigger=\"newQuery from:body\" hx-target=\"#searchResultArea\" class=\"
+\"> <input class=\"input is-info\" type=\"search\" name=\"search\" placeholder=\"Search\" hx-target=\"#searchResultArea\" hx-trigger=\"keyup changed delay:500ms\" hx-get=\"/search\"> <span class=\"icon is-left\"><i class=\"fas fa-search\" aria-hidden=\"true\"></i></span></p></div><div id=\"searchResultArea\">
+</div><div id=\"queryViewArea\"></div></article>
+<a class=\"panel-block is-active flex flex-row justify-between\"><button type=\"button\" name=\"queryName\" value=\"
+\" hx-get=\"/query\" hx-target=\"#queryViewArea\">
+</button> <button class=\"delete\" hx-delete=\"/query\" name=\"queryName\" value=\"
+\"></button></a>
+<div class=\"modal is-active\" id=\"modalView\"><div class=\"modal-background\"></div><div class=\"modal-card\"><header class=\"modal-card-head\"><p class=\"modal-card-title\"><span class=\"has-text-info\">
+</span></p><button class=\"delete\" aria-label=\"close\" onclick=\"hideModal()\"></button></header><pre class=\"modal-card-body\" id=\"queryModal\">
+</pre><footer class=\"modal-card-foot\"><div class=\"buttons\"><button class=\"button is-success\" onclick=\"copy()\">Copy</button> <button class=\"button\" onclick=\"hideModal()\">Cancel</button></div></footer></div></div><div class=\"modal\" id=\"copiedModal\">Copied!</div><script>\n  function hideModal() {\n    const d = document.getElementById(\"modalView\")\n    d.classList.remove(\"is-active\")\n  }\n  function hideCopiedModal() {\n    const d = document.getElementById(\"copiedModal\")\n    d.classList.remove(\"is-active\")\n  }\n  function copy() {\n    var copyText = document.getElementById(\"queryModal\");\n    navigator.clipboard.writeText(copyText.innerHTML);\n\n\n    const d = document.getElementById(\"modalView\")\n    d.classList.remove(\"is-active\")\n\n    const q = document.getElementById(\"copiedModal\")\n    q.classList.add(\"is-active\")\n    setTimeout(hideCopiedModal, 1000)\n  }\n</script>
