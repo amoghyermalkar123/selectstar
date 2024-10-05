@@ -1,6 +1,5 @@
 ## SelectStar
-SelectStar is a minimalistic personal query management app
-It helps you -
+SelectStar is a minimalistic personal query management app which helps you -
   * Add a query
   * Delete a query
   * View All Queries
